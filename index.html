@@ -1,0 +1,579 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Bite Club</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <body style="background-color: #f6f4ee;">
+</body>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        barlow: ['Barlow', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#347dc8',
+                        dark: '#1f2937' 
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-barlow text-gray-800">
+
+<header class="flex items-center justify-between px-6 mt-[5vh]">
+
+    <figure>
+        <img src="./images/banner.png"
+             alt="Logo Big Bite"
+             class="w-[30vw] max-w-[160px]">
+    </figure>
+
+    <button id="menuBtn" class="md:hidden text-3xl">
+        ☰
+    </button>
+
+    <nav class="hidden md:block">
+        <ul class="flex gap-8 text-lg">
+            <li><a href="#cardapio" class="hover:text-primary transition">Cardápio</a></li>
+            <li><a href="#contato" class="hover:text-primary transition">Contato</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<div id="mobileMenu"
+     class="fixed top-0 right-[-100%] w-[70%] h-full bg-white shadow-lg transition-all duration-300 p-8 md:hidden z-50">
+
+    <button id="closeBtn" class="text-2xl mb-6">
+        ✕
+    </button>
+
+    <ul class="flex flex-col gap-6 text-lg">
+        <li><a href="#cardapio" class="hover:text-primary">Cardápio</a></li>
+        <li><a href="#contato" class="hover:text-primary">Contato</a></li>
+    </ul>
+
+</div>
+
+<section class="text-center p-8">
+
+    <div class="md:flex md:items-center md:justify-center md:gap-10">
+
+        <article class="md:w-[45%]">
+
+            <h1 class="text-2xl md:text-4xl font-semibold">
+                O verdadeiro Rei do Fast-Food
+            </h1>
+
+            <a href="#cardapio"
+               class="inline-block mt-4 px-8 py-4 border border-gray-800 rounded-xl text-lg min-h-[48px] hover:bg-primary hover:text-white transition">
+                Veja o Cardápio
+            </a>
+
+        </article>
+
+        <figure class="md:w-[45%] mt-6 md:mt-0">
+            <img src="./images/logo.png"
+                 alt="Prato japonês"
+                 class="w-[90%] mx-auto">
+        </figure>
+
+    </div>
+
+</section>
+
+<section id="cardapio"
+         class="max-w-[90vw] mx-auto mt-[5vh] p-8">
+
+    <h2 class="text-3xl font-bold text-center mb-8">
+        Cardápio
+    </h2>
+    <nav id="nav-categorias" class="overflow-x-auto whitespace-nowrap snap-x flex gap-2 mt-6 pb-1">
+        <button data-cat="entradas" class="snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">
+            Entradas
+        </button>
+        <button data-cat="hamburgueres" class="snap-start px-4 py-1 rounded-full bg-[#ebebeb] text-dark font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">
+            Hambúrgueres
+        </button>
+        <button data-cat="bebidas" class="snap-start px-4 py-1 rounded-full bg-[#ebebeb] text-dark font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">
+            Bebidas
+        </button>
+        <button data-cat="sobremesas" class="snap-start px-4 py-1 rounded-full bg-[#ebebeb] text-dark font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">
+            Sobremesas
+        </button>
+
+        <!-- Entradas-->
+     </nav>
+    <div id="cat-entradas" class="categoria-conteudo">
+        <h3 class="text-primary text-xl mt-6 font-semibold">
+            Entradas
+        </h3>
+        <div class="mt-4 space-y-4">
+            <article>
+    <div class="flex items-center gap-4">
+        <img src="./images/onion ring.png" alt="Onion Rings" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Onion Rings</h4>
+                <span class="text-primary">R$ 25,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Onion rings crocantes com molho barbecue
+            </p>
+        </div>
+    </div>
+</article>
+
+            <article>
+                <div class="flex items-center gap-4">
+        <img src="./images/batata frita.png" alt="Onion Rings" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Batata Frita</h4>
+                <span class="text-primary">R$ 20,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Porção generosa de batata frita crocante
+            </p>
+        </div>
+    </div>
+</article>
+
+            <article>
+                <div class="flex items-center gap-4">
+        <img src="./images/batata rustica.png" alt="Batata Rústica" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Batata rústica com cheddar e bacon</h4>
+                <span class="text-primary">R$ 29,99</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Porção generosa de batata rústica com cheddar e bacon
+            </p>
+        </div>
+    </div>
+</article>
+
+            <article>
+                <div class="flex items-center gap-4">
+        <img src="./images/mini hamburguer.png" alt="Onion Rings" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Mini hamburgueres</h4>
+                <span class="text-primary">R$ 42,50</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Porção generosa de mini hamburgueres com molho especial (escolha entre 3 sabores)
+            </p>
+        </div>
+    </div>
+</article>
+            <article>
+                <div class="flex items-center gap-4">
+        <img src="./images/nuggets.png" alt="Nuggets de frango artesanal" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+                <div class="flex justify-between">
+                    <h4 class="font-bold text-lg">Nuggets de frango artesanal</h4>
+                    <span class="text-primary">R$ 34,99</span>
+                </div>
+                <p class="text-sm text-gray-500">
+                    Porção generosa de nuggets de frango artesanal com molho barbecue
+                </p>
+            </article>
+            
+        </div>
+    </div>
+
+
+    <div id="cat-hamburgueres" class="categoria-conteudo hidden">
+        <h3 class="text-primary text-xl mt-6 font-semibold">
+            Hambúrgueres
+        </h3>
+        <div class="mt-4 space-y-4">
+           <!-- ...existing code... -->
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="images/cheesburguer.png" alt="Classic Burger" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Classic Burger</h4>
+                <span class="text-primary">R$ 30,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Pão brioche, carne angus, queijo cheddar, alface, tomate e molho especial
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/bbq.png" alt="BBQ Burger" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">BBQ Burger</h4>
+                <span class="text-primary">R$ 34,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Carne angus, queijo prato, cebola caramelizada, bacon crocante e molho barbecue
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/spicy.png" alt="Spicy Burger" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Spicy Burger</h4>
+                <span class="text-primary">R$ 38,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Carne angus, jalapeños, queijo pepper jack, alface e molho picante
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/vegano.png" alt="Veggie Burger" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Veggie Burger</h4>
+                <span class="text-primary">R$ 25,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                hambúrguer de grão-de-bico, queijo vegano, rúcula e maionese de ervas
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/smash.png" alt="Double Smash" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Double Smash</h4>
+                <span class="text-primary">R$ 40,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Dois discos de carne smash, cheddar duplo, picles e molho da casa
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/burguer club.png" alt="Burguer Club" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Burguer Club</h4>
+                <span class="text-primary">R$ 55,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Hambúrguer original da casa, acompanha molho especial, quatro discos de carne smash, quatro tipos de queijo, bacon, salada e picles no pão brioche.
+            </p>
+        </div>
+    </div>
+</article>
+
+<!-- ...existing code... -->
+
+        </div>
+    </div>
+
+    <!-- Bebidas -->
+
+    <div id="cat-bebidas" class="categoria-conteudo hidden">
+        <h3 class="text-primary text-xl mt-6 font-semibold">
+            Bebidas
+        </h3>
+        <div class="mt-4 space-y-4">
+           <!-- ...existing code... -->
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/refri.png" alt="Refrigerante" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Refrigerante</h4>
+                <span class="text-primary">R$ 10,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Lata 450ml
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/agua.png" alt="Água" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Água</h4>
+                <span class="text-primary">R$ 4,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Garrafa 500ml
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/suco.png" alt="Sucos naturais" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Sucos naturais</h4>
+                <span class="text-primary">R$ 12,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Copo 600ml (laranja, limão, maracujá, uva, abacaxi)
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/chopp.png" alt="Chopp artesanal" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Chopp artesanal</h4>
+                <span class="text-primary">R$ 14,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Copo 500ml (pilsen, IPA, stout)
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/caipirinha.png" alt="Caipirinha clássica e versões com frutas" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Caipirinha clássica e versões com frutas</h4>
+                <span class="text-primary">R$ 18,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Copo 300ml (limão, morango, maracujá, kiwi, amora, frutas vermelhas, manga)
+            </p>
+        </div>
+    </div>
+</article>
+
+<!-- ...existing code... -->
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Sobremesas -->
+    <div id="cat-sobremesas" class="categoria-conteudo hidden">
+        <h3 class="text-primary text-xl mt-6 font-semibold">
+            Sobremesas
+        </h3>
+        <div class="mt-4 space-y-4">
+           <!-- ...existing code... -->
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/milkshake.png" alt="MilkShake" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">MilkShake</h4>
+                <span class="text-primary">R$ 17,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                750ml (baunilha, chocolate, morango, oreo, doce de leite, ninho com nutella)
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/cheesecake.png" alt="Cheesecake de frutas vermelhas" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Cheesecake de frutas vermelhas</h4>
+                <span class="text-primary">R$ 20,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Fatia generosa de cheesecake com calda de frutas vermelhas e pedaços de morango
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/churros.png" alt="Churros recheados" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Churros recheados</h4>
+                <span class="text-primary">R$ 18,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Churros recheados com doce de leite e cobertos com chocolate. (10 unidades)
+            </p>
+        </div>
+    </div>
+</article>
+
+<article>
+    <div class="flex items-center gap-4">
+        <img src="./images/brownie.png" alt="Brownie com sorvete de creme" class="w-16 h-16 object-cover rounded" />
+        <div class="flex-1">
+            <div class="flex justify-between">
+                <h4 class="font-bold text-lg">Brownie com sorvete de creme</h4>
+                <span class="text-primary">R$ 20,00</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                Fatia generosa de brownie com sorvete de sua escolha e calda de chocolate.
+            </p>
+        </div>
+    </div>
+</article>
+
+<!-- ...existing code... -->
+        </div>
+    </div>
+
+</section>
+
+<section id="contato"
+         class="max-w-[90vw] mx-auto mt-[5vh] p-8 text-center">
+
+    <h2 class="text-3xl font-bold mb-6">
+        Contato
+    </h2>
+
+    <p class="mb-2">📍 Rua Culinária, 360</p>
+    <p class="mb-2">📞 (15) 3321-4321</p>
+    <p class="mb-2">🕒 Aberto das 16h às 23h (Seg a Dom)</p>
+
+</section>
+
+<footer class="bg-gray-800 text-white text-center p-12 mt-[5vh]">
+    <p>© 2026 Big Bite Club - Todos os direitos reservados</p>
+</footer>
+
+<aside>
+    <a href="https://wa.me/5515987654321">
+        <img src="./images/whatsapp.png"
+             class="h-[8vh] fixed bottom-[2vh] right-[4vw]"
+             alt="WhatsApp">
+    </a>
+</aside>
+
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.style.right = "0";
+    });
+
+    closeBtn.addEventListener("click", () => {
+        mobileMenu.style.right = "-100%";
+    });
+</script>
+
+<script>
+    const botoes = document.querySelectorAll('.btn-cat');
+    const conteudos = document.querySelectorAll('.categoria-conteudo');
+
+    function mudarCategoria(cat) {
+        //mostra apenas a categoria selecionada
+        conteudos.forEach(div => {
+            div.id === 'cat-' + cat ? div.classList.remove('hidden') : div.classList.add('hidden');
+        });
+        //atualiza estilo do botão ativo
+        botoes.forEach(btn => {
+            if (btn.dataset.cat === cat) {
+                btn.classList.add('bg-primary', 'text-white');
+                btn.classList.remove('bg-[#ebebeb]', 'text-dark');
+            }else {
+                btn.classList.remove('bg-primary', 'text-white');
+                btn.classList.add('bg-[#ebebeb]', 'text-dark');
+            }
+        });
+    }
+    //adiciona eventos a cada botão
+    //botoes.forEach(btn => {
+      //  btn.addEventListener('touchstart', () =>{
+       //     btn.classList.add('scale-95');
+       //     mudarCategoria(btn.dataset.cat)
+       // });
+       // btn.addEventListener('touchend', () => {
+       //     btn.classList.remove('scale-95');
+      //  });
+     //   btn.addEventListener('click', () => {
+     //       mudarCategoria(btn.dataset.cat);
+     //   });
+  //  });
+
+    //ativar scroll suave para links do menu
+    let startX = 0;
+    let startY = 0;
+    
+    //evento de cada botão
+    botoes.forEach(btn => {
+        //touchstart é disparado quando o dedo toca a tela
+        btn.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        //aplica class tailwind para efeito de clique
+            btn.classList.add('scale-95', 'opacity-80');
+        });
+        //touchend é disparado quando o dedo é levantado
+        btn.addEventListener('touchend', (e) => {
+            //remove classe de clique
+            btn.classList.remove('scale-95', 'opacity-80');
+            //ultima posição do dedo antes de levanta
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            //calcula distância percorrida pelo dedo em pixels
+            const deltaX = Math.abs(endX - startX);
+            const deltaY = Math.abs(endY - startY);
+            //logica matemática se movel menos de 10px = clique intencional
+            if (deltaX < 10 && deltaY < 10) {
+                mudarCategoria(btn.dataset.cat);
+            }
+        });
+        //touchcancel se o celular aparecer uma ligação ou notificação popup
+        btn.addEventListener('touchcancel', () => {
+            btn.classList.remove('scale-95', 'opacity-80');
+        });
+        //click para usuários desktop
+        btn.addEventListener('click', () => {
+            mudarCategoria(btn.dataset.cat);
+        });
+    });
+</script>
+
+</body>
+</html>
